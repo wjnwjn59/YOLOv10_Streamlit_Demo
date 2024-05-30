@@ -8,13 +8,13 @@ from config.model_config import Detector_Config
 from components.streamlit_footer import footer
 
 @st.cache_data(max_entries=1000)
-def process_and_display_image(image_path):
+def process_inference(image_path):
     result_img = inference(
         image_path,
         weight_path=Detector_Config().weight_path
     )
-    st.markdown('**Detection result**')
-    st.image(result_img)
+
+    return result_img
 
 def main():
     st.set_page_config(
@@ -47,10 +47,14 @@ def main():
     st.divider()
 
     if example_button:
-        process_and_display_image('static/example_img.jpg')
+        result_img = process_inference('static/example_img.jpg')
         
     if uploaded_img:
-        process_and_display_image(uploaded_img)
+        result_img = process_inference(uploaded_img)
+
+    if result_img:
+        st.markdown('**Detection result**')
+        st.image(result_img)
 
     footer()
 
