@@ -53,7 +53,7 @@ def main():
     else:
         result_img = None
 
-    if result_img:
+    if result_img is not None:
         st.markdown('**Detection result**')
         st.image(result_img)
 
