@@ -48,9 +48,10 @@ def main():
 
     if example_button:
         result_img = process_inference('static/example_img.jpg')
-        
-    if uploaded_img:
+    elif uploaded_img:
         result_img = process_inference(uploaded_img)
+    else:
+        result_img = None
 
     if result_img:
         st.markdown('**Detection result**')
