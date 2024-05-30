@@ -50,11 +50,6 @@ def main():
         process_and_display_image('static/example_img.jpg')
         
     if uploaded_img:
-        # uploaded_img_path = save_upload_file(uploaded_img)
-        # try:
-        #     process_and_display_image(uploaded_img_path)
-        # finally:
-        #     delete_file(uploaded_img_path)
         process_and_display_image(uploaded_img)
 
     footer()
