@@ -1,7 +1,7 @@
 # YOLOv10 Streamlit Demo
 
 ## Description
-A simple web demo using YOLOv10 and Streamlit.
+A simple object detection web demo using YOLOv10 and Streamlit.
 
 ## How to use
 ### Option 1: Using conda environment
